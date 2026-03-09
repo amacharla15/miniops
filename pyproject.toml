@@ -9,6 +9,9 @@ description = "Small C++/Python tensor ops package with a native CPU backend."
 readme = "README.md"
 requires-python = ">=3.10"
 
+[project.optional-dependencies]
+dev = ["pytest"]
+
 [tool.scikit-build]
 wheel.packages = ["src/miniops"]
 build.verbose = true
