@@ -1,0 +1,14 @@
+[build-system]
+requires = ["scikit-build-core>=0.12", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "miniops"
+version = "0.1.0"
+description = "Small C++/Python tensor ops package with a native CPU backend."
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.scikit-build]
+wheel.packages = ["src/miniops"]
+build.verbose = true

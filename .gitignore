@@ -1,0 +1,11 @@
+.venv/
+pycache/
+*.pyc
+*.pyo
+.pyd
+.pytest_cache/
+build/
+dist/
+.egg-info/
+results/phase6/.tmp
+results/phase7/.tmp
