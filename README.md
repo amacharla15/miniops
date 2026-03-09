@@ -1,5 +1,9 @@
 # miniops
 
+```md
+![CI](https://github.com/amacharla15/miniops/actions/workflows/ci.yml/badge.svg)
+![Wheels](https://github.com/amacharla15/miniops/actions/workflows/wheels.yml/badge.svg)
+
 miniops is a small C++ and Python tensor-ops package built to learn native library design, Python bindings, packaging, testing, and benchmarking.
 
 The project starts with a Python reference implementation, adds a native CPU backend in C++, exposes that backend to Python with `pybind11`, packages the project with CMake and `scikit-build-core`, verifies native/reference parity with tests, and benchmarks the native backend against the Python reference implementation.
@@ -25,6 +29,38 @@ This project was built to practice the kind of mixed-language developer tooling 
 - Native/reference parity testing
 - Benchmark harness with CSV output
 - Benchmark analysis with speedup and time reduction summaries
+
+## Distribution and automation
+
+The project now supports multiple distribution and validation paths:
+
+- **Editable/source install** through `pyproject.toml`, `scikit-build-core`, and CMake
+- **Cross-platform CI** through GitHub Actions on Linux and Windows
+- **Wheel artifact builds** through a dedicated GitHub Actions workflow
+- **Conda recipe support** through `conda/recipe/meta.yaml`
+
+### CI
+
+The repository includes automated test workflows that validate the package across:
+
+- Linux
+- Windows
+- multiple Python versions
+
+This helps catch packaging, native build, and test regressions in clean environments.
+
+### Wheels
+
+A dedicated wheel-building workflow generates downloadable wheel artifacts in GitHub Actions for Linux and Windows.
+
+This proves the package is not only installable from source, but can also be produced as a binary distribution artifact.
+
+### Conda
+
+The repository also includes a Conda recipe:
+
+```text
+conda/recipe/meta.yaml
 
 ## Architecture
 
