@@ -1,0 +1,35 @@
+package:
+  name: miniops
+  version: "0.1.0"
+
+source:
+  path: ../..
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv --no-deps"
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+  host:
+    - python
+    - pip
+    - scikit-build-core >=0.12
+    - pybind11
+    - cmake
+    - ninja
+  run:
+    - python
+
+test:
+  imports:
+    - miniops
+
+about:
+  summary: Small C++/Python tensor ops package with a native CPU backend.
+  license: MIT
+
+extra:
+  recipe-maintainers:
+    - amacharla15
